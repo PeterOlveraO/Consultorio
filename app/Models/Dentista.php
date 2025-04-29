@@ -14,6 +14,7 @@ class Dentista extends Model
         'email',
         'direccion',
         'contrasena',
-        'es_administrador'
+        'es_administrador',
+        'activo'
     ];
 }

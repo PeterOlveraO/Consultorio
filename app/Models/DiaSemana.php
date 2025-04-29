@@ -7,4 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class DiaSemana extends Model
 {
     //
+    protected $fillable = [
+        'nombre_dia',
+    ];
 }

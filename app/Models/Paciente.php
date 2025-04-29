@@ -11,7 +11,6 @@ class Paciente extends Model
         'apellido',
         'fecha_nacimiento',
         'telefono',
-        'email',
-        'direccion'
+        'activo'
     ];
 }

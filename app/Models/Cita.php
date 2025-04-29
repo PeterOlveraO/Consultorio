@@ -10,7 +10,10 @@ class Cita extends Model
         'paciente_id',
         'dentista_id',
         'fecha',
-        'motivo',
-        'estado'
+        'dentistatratamiento_id',
+        'estado_id',
+        'comentarios'
     ];
+
+    
 }

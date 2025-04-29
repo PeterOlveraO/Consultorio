@@ -8,6 +8,7 @@ class ListaTratamientos extends Model
 {
     protected $fillable = [
         'nombre',
-        'descripcion'
+        'descripcion',
+        'activo'
     ];
 }
