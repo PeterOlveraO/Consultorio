@@ -21,7 +21,7 @@ class DentistaTratamientoController extends Controller
     {
         $request->validate([
             'dentista_id' => 'required|exists:dentistas,id',
-            'tratamiento_id' => 'required|exists:lista_tratamientos,id',
+            'tratamiento_id' => 'required|exists:lista_tratamientos,id'
         ]);
 
         $dentistaTratamiento = DentistaTratamiento::create($request->all());

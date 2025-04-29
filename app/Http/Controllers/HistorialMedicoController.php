@@ -28,6 +28,13 @@ class HistorialMedicoController extends Controller
     public function store(Request $request)
     {
         //
+        $request ->validate([
+            'paciente_id' => 'required|exists:pacientes,id',
+            'dentista_id' => 'required|exists:dentistas,id',
+            'tratamiento_id' => 'required|exists:lista_tratamientos,id',
+            'observaciones' => 'required|string|max:255',
+            'fecha' => 'required|date'
+        ]);
     }
 
     /**

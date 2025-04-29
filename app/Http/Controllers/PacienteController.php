@@ -23,9 +23,7 @@ class PacienteController extends Controller
             'nombre' => 'required|string|max:255',
             'apellido' => 'required|string|max:255',
             'fecha_nacimiento' => 'required|date',
-            'telefono' => 'required|string|max:20',
-            'email' => 'nullable|email|unique:pacientes,email',
-            'direccion' => 'required|string|max:255',
+            'telefono' => 'required|string|max:20'
         ]);
 
         $paciente = Paciente::create($request->all());

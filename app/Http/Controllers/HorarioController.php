@@ -28,6 +28,13 @@ class HorarioController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'dentista_id' => 'required|exists:dentistas,id',
+            'dia_semana_id' => 'required|exists:dias_semana,id',
+            'hora_inicio' => 'required|date_format:H:i',
+            'hora_fin' => 'required|date_format:H:i|after:hora_inicio',
+            'habilidate' => 'required|boolean'
+        ]);
     }
 
     /**

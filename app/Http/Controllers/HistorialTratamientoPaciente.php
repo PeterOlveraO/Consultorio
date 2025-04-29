@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 
 class HistorialTratamientoPaciente extends Controller
@@ -28,6 +29,15 @@ class HistorialTratamientoPaciente extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'dentista_id' => 'required|exists:dentistas,id',
+            'paciente_id' => 'required|exists:pacientes,id',
+            'tratamiento_id' => 'required|exists:lista_tratamientos,id',
+            'observaciones' => 'required',
+            'fecha_inicio' => 'required|date',
+            'fecha_fin' => 'nullable|date|after_or_equal:fecha_inicio',
+            'estado_id' => 'required|exists:estados_cita,id'
+        ]);
     }
 
     /**

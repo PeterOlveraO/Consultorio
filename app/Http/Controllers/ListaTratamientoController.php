@@ -21,7 +21,7 @@ class ListaTratamientoController extends Controller
     {
         $request->validate([
             'nombre' => 'required|string|max:255',
-            'descripcion' => 'nullable|string',
+            'descripcion' => 'nullable|string'
         ]);
 
         $tratamiento = ListaTratamientos::create($request->all());

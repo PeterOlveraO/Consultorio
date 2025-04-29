@@ -23,8 +23,9 @@ class CitaController extends Controller
             'paciente_id' => 'required|exists:pacientes,id',
             'dentista_id' => 'required|exists:dentistas,id',
             'fecha' => 'required|date',
-            'motivo' => 'required|string',
-            'estado' => 'required|in:Pendiente,Confirmada,Cancelada',
+            'comentarios' => 'required|string',
+            'dentistatratamiento_id' => 'required|exists:dentistas_tratamientos,id',
+            'estado_id' => 'required|exists:estados_cita,id'
         ]);
 
         $cita = Cita::create($request->all());
